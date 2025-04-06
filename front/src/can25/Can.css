@@ -1,0 +1,327 @@
+/* .can25-container */
+.can25-container {
+  padding: 80px 5%;
+  text-align: center;
+  background: linear-gradient(to bottom, #f0f5ff, #e6ecf9); /* خلفية متدرجة أنيقة */
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.05); /* ظل داخلي خفيف باش يعطي عمق */
+}
+
+/* .can25-title */
+.can25-title {
+  background-image: url(/public/can-back.PNG);
+  padding: 20px;
+  font-size: 48px; /* كبرنا الخط باش يبان مزيان */
+  color:  #ff5500; /* اللون الأساسي يتماشى مع ألوان الموقع */
+  text-transform: uppercase;
+  font-weight: 900; /* عريض بزاف باش يكون Catchy */
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); /* ظل خفيف يعطي العمق */
+  font-family: 'Arial', sans-serif; /* تأكد من الخط */
+  animation: fadeInDown 0.8s ease-out;
+}
+
+/* Countdown Style */
+.match-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #003366; /* Couleur de texte par défaut */
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 0.8rem;
+  transition: color 0.5s ease;
+}
+/* Countdown Items (days, hours, minutes, seconds) */
+.countdown-item {
+  background: #f7fafc;
+  color: rgb(12, 12, 12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  min-width: 50px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s infinite alternate;
+}
+
+/* Countdown Separator */
+.countdown-separator {
+  margin: 0 4px;
+  color: #003366;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Animation for countdown-item */
+.countdown-item {
+  animation: countdown-animation 0.8s ease-in-out;
+}
+
+/* When the match is finished, change the color */
+.match-stadium {
+  font-size: 1rem;
+  color: #e60000; /* Rouge si le match est terminé */
+  font-weight: 700;
+}
+
+@keyframes countdown-animation {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Styles when the countdown reaches 0 */
+.match-countdown.past {
+  color: #e60000; /* Change la couleur du texte en rouge */
+}
+
+.match-countdown.past .countdown-item {
+  background-color: #e60000; /* Fond rouge pour les éléments du chrono */
+  color: #fff;
+}
+
+/* Animating the separator color */
+.countdown-separator {
+  animation: separator-animation 1.5s ease-in-out infinite;
+}
+
+/* Separator animation effect */
+@keyframes separator-animation {
+  0% {
+    color: #003366;
+  }
+  50% {
+    color: #ff5500; /* Un léger changement de couleur pour attirer l'attention */
+  }
+  100% {
+    color: #003366;
+  }
+}
+
+/* Responsive Design for Countdown */
+@media (max-width: 768px) {
+  .match-countdown {
+    font-size: 1.2rem;
+  }
+
+  .countdown-item {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .countdown-separator {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .match-countdown {
+    font-size: 1rem;
+  }
+
+  .countdown-item {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .countdown-separator {
+    font-size: 1rem;
+  }
+}
+
+/* Match Card */
+.match-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.match-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.match-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #0074D9;
+  transition: transform 0.5s ease;
+}
+
+.match-card:hover .match-image {
+  transform: scale(1.05);
+}
+
+.match-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.match-teams {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #003366;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.match-stadium, .match-time {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.match-price {
+  margin-top: auto;
+  font-size: 1.1rem;
+  text-align: center;
+  padding-top: 1rem;
+  color: #555;
+}
+
+.static-price {
+  font-weight: bold;
+  color: #ff5500;
+  font-size: 1.3rem;
+}
+
+/* Buy Button */
+.buy-ticket-btn1 {
+  background: linear-gradient(135deg, #0074D9, #003366);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.buy-ticket-btn1:hover {
+  background: linear-gradient(135deg, #003366, #0074D9);
+  letter-spacing: 1.5px;
+}
+
+/* Voir Plus Button */
+.voir-plus-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.voir-plus-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 52, 102, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.voir-plus-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.voir-plus-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 52, 102, 0.4);
+  background-color: #0074D9;
+}
+
+.voir-plus-btn:hover::before {
+  left: 100%;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.can25-container > div:first-child {
+  animation: pulse 1.5s infinite;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #003366;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .can25-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .can25-title {
+    font-size: 2.5rem;
+  }
+  
+  .can25-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .match-teams {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .can25-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .can25-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .voir-plus-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

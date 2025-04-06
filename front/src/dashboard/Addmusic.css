@@ -1,0 +1,173 @@
+/* Addmusic.css */
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    color: #495057;
+    margin-bottom: 2rem;
+}
+
+.btn-secondary:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9, #8e44ad);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+form {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    background-color: white;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #adb5bd;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Animation pour les champs */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mb-3 {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Délai d'animation pour chaque champ */
+.mb-3:nth-child(1) { animation-delay: 0.1s; }
+.mb-3:nth-child(2) { animation-delay: 0.2s; }
+.mb-3:nth-child(3) { animation-delay: 0.3s; }
+.mb-3:nth-child(4) { animation-delay: 0.4s; }
+.mb-3:nth-child(5) { animation-delay: 0.5s; }
+
+/* Style pour le fichier upload */
+input[type="file"] {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #e0e0e0;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #3498db;
+    background-color: #eaf4fd;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 8px 12px;
+    background-color: #e9ecef;
+    border: none;
+    border-radius: 4px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #dee2e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}

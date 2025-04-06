@@ -1,0 +1,610 @@
+ /*-------------------------------------------------------------------------(Barre principale) ------------------------------------------*/
+/* Main Navbar */
+/* Barre de navigation principale */
+.main-navbar {
+  background: linear-gradient(to right, #001f3f, #0074D9); /* Gradient color */
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Listes dans la barre principale */
+.main-navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navbar li {
+  margin: 0 15px;
+}
+
+/* Logo dans la barre principale */
+.main-navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f1c40f; /* Couleur dorée */
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* Liens de navigation dans la barre principale */
+.main-navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.main-navbar a:hover {
+  background-color: #ff5500; /* Orange */
+  color: white;
+  border-radius: 20px;
+}
+
+/* Input de recherche */
+.main-navbar input[type="search"] {
+  padding: 8px 12px;
+  border: 1px solid #f1c40f; /* Doré */
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  color: #333;
+  transition: border-color 0.3s ease;
+  width: 250px;
+}
+
+.main-navbar input[type="search"]:focus {
+  border-color: #ff5500; /* Orange sur focus */
+  outline: none;
+}
+
+/* Dropdown de connexion */
+.login-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.login-dropdown {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 150px;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.login-hover:hover .login-dropdown {
+  display: block;
+}
+
+.login-dropdown a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.login-dropdown a:hover {
+  background-color: #f96706;
+}
+
+/* Barre de navigation secondaire */
+.secondary-navbar {
+  background-color: #003366; /* Fond similaire au slider */
+  padding: 12px 0;
+  position: fixed;
+  top: 56px; /* Positionné juste en dessous de la barre principale */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  z-index: 999;
+}
+
+/* Liens dans la barre secondaire */
+.secondary-navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.secondary-navbar a:hover {
+  background-color: #ff5500;
+  color: white;
+}
+
+/* Message du panier */
+.cart-message {
+  position: fixed;
+  top: 70px; /* Ajuste cette valeur pour le placer juste au-dessus du panier */
+  right: 4px; /* Aligne le message avec le bouton du panier */
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Message panier vide */
+.empty-message h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.empty-message p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.view-products-button {
+  background-color: rgb(26, 153, 199);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.view-products-button:hover {
+  background-color: darkorange;
+}
+
+
+
+/* Style pour le lien PANIER */
+.main-navbar .right-links li a {
+  display: flex;
+  align-items: center;
+  font-size: 16px; /* Taille plus grande pour plus de visibilité */
+  font-weight: bold;
+  color: white; /* Couleur blanche */
+  text-decoration: none; /* Pas de soulignement */
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-navbar .right-links li a:hover {
+  background-color: #ff5500; /* Couleur orange au survol */
+  color: white; /* Texte blanc */
+  border-radius: 20px; /* Coins arrondis */
+}
+
+.main-navbar .right-links li a svg {
+  margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
+
+
+  /*--------------------------------------------------------------------------Conteneur de la vidéo  ------------------------------------------*/
+  
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13.1px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden; /* Masque tout ce qui dépasse du conteneur */
+  }
+  
+  /* Lecteur vidéo ajusté */
+  .video-player {
+    width: 100%;           /* La vidéo prend toute la largeur du conteneur */
+    height: 100%;          /* La vidéo prend toute la hauteur du conteneur */
+    object-fit: cover;     /* Assure que la vidéo couvre toute la zone sans déformation */
+    border-radius: 0px;   /* Coins arrondis pour un effet moderne */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet moderne */
+  }
+  
+  
+.video-player {
+    width: 100%; /* Largeur de la vidéo */
+    height: auto; /* Garder l'aspect de la vidéo */
+  }
+  
+  /* Masquer tous les autres contrôles vidéo sauf ceux du son */
+  .video-player::-webkit-media-controls-panel {
+    display: none; /* Cache tout le panneau de contrôle de la vidéo */
+  }
+  
+  .video-player::-webkit-media-controls-play-button {
+    display: none; /* Cache le bouton de lecture */
+  }
+  
+  .video-player::-webkit-media-controls-current-time-display,
+  .video-player::-webkit-media-controls-time-remaining-display,
+  .video-player::-webkit-media-controls-seekbar {
+    display: none; /* Cache la barre de progression et l'affichage du temps */
+  }
+  
+  .video-player::-webkit-media-controls-volume-slider {
+    display: block; /* Affiche uniquement le contrôle du volume */
+  }
+  
+  .video-player::-webkit-media-controls-mute-button {
+    display: block; /* Affiche le bouton de sourdine */
+  }
+  
+  .video-player::-webkit-media-controls-fullscreen-button {
+    display: none; /* Cache le bouton plein écran */
+  }
+  
+  /* Style spécifique pour les boutons */
+  .video-player::-webkit-media-controls-volume-slider {
+    width: 120px; /* Ajuste la taille du curseur de volume */
+  }
+  
+  .video-player::-webkit-media-controls-mute-button {
+    display: block;
+  }
+  
+
+
+  /*--------------------------------------------------------------------------filtres ------------------------------------------*/
+  .can25-container {
+    padding: 80px 5%;
+    text-align: center;
+    background: linear-gradient(to bottom, #f0f5ff, #e6ecf9); /* خلفية متدرجة أنيقة */
+  
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.05); /* ظل داخلي خفيف باش يعطي عمق */
+  }
+  
+  .can25-title {
+    background-image: url(/public/can-back.PNG);
+  padding: 20px;
+    font-size: 48px; /* كبرنا الخط باش يبان مزيان */
+    color:  #ff5500; /* اللون الأساسي يتماشى مع ألوان الموقع */
+    text-transform: uppercase;
+    font-weight: 900; /* عريض بزاف باش يكون Catchy */
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); /* ظل خفيف يعطي العمق */
+    font-family: 'Arial', sans-serif; /* تأكد من الخط */
+    animation: fadeInDown 0.8s ease-out;
+  }
+  
+  /* أنيميشن نزول */
+  @keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  
+  /* الشبكة */
+  .can25-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* البطاقة */
+  .match-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  /* تأثير Hover */
+  .match-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* الصورة */
+  .match-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+  }
+  
+  .match-card:hover .match-image {
+    filter: brightness(1.1);
+  }
+  
+  /* المعلومات */
+  .match-info {
+    padding: 15px;
+    color: #444;
+    text-align: left;
+  }
+  
+  /* أسماء الفرق */
+  .match-teams {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #001f3f;
+  }
+  
+  /* تفاصيل التوقيت والملعب */
+  .match-stadium, .match-time {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* العد التنازلي */
+  .countdown-timer {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff5500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 8px 0;
+  }
+  
+  /* لو الماتش بدا */
+  .match-started {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* السعر */
+  .match-price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .static-price {
+    color: #ff5500;
+    font-size: 18px;
+  }
+  
+  .match-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  /* الصورة */
+  .match-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+  }
+  
+  /* المعلومات */
+  .match-info {
+    padding: 15px;
+    color: #444;
+    text-align: left;
+    flex-grow: 1;
+  }
+  
+  /* زر الشراء */
+  .buy-ticket-btn1 {
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    border-top: 1px solid #eee;
+    margin-top: auto; /* هادي تضمن أن البوتون يبقى دائما لاصق في الأسفل */
+  }
+  
+  .buy-ticket-btn1:hover {
+    background-color: #e64a19;
+  }
+  
+  
+  .match-card:hover .buy-ticket-btn {
+    opacity: 1;
+    transform: translateY(-10px);
+    bottom: 0;
+  }
+  .voir-plus-container {
+    margin-top: 20px;
+  }
+  .voir-plus-btn {
+    background-color: #0074D9;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .voir-plus-btn:hover {
+    transform: translateY(-3px);
+    background-color: #0056b3;
+  }
+  
+  
+  /* أنيميشن Fade In */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* أنيميشن Fade In Up */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Filtres Section */
+.filters-section {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.toggle-filters-btn {
+  background: linear-gradient(to right, #0074D9, #003366);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 52, 102, 0.2);
+}
+
+.toggle-filters-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 52, 102, 0.3);
+}
+
+.filters-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #003366;
+  font-size: 0.95rem;
+}
+
+.filter-group select {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #0074D9;
+  box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.2);
+}
+
+.price-range-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price-range-slider input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #ddd;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.price-range-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #0074D9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.reset-filters-btn {
+  background: #f0f0f0;
+  color: #003366;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+}
+
+.reset-filters-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filters-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .toggle-filters-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
